@@ -59,17 +59,36 @@ body {
 }
 .color-5 {
   border: 3px solid #FFC107;
-  background-color: #FFE28E;
+  background-color: #FFC107;
 }
 .color-5:hover {
-  background-color: #81B4E6;
+  background-color: #FFE28E;
 }
 .color-6 {
   border: 3px solid #FFE28E;
-  background-color: #FFC107;
+  background-color: #1976D2;
 }
 .color-6:hover {
   border-color: #1976D2;
+}
+.color-7, .color-9 {
+  border: 3px solid #81B4E6;
+  background-color: #1976D2;
+}
+.color-7:hover, .color-9:hover {
+  border-color: #1976D2;
+  background-color: #81B4E6;
+}
+.color-8, .color-10 {
+  background-color: #81B4E6;
+  border: 3px solid #1976D2;
+}
+.color-8:hover, .color-10:hover {
+  border-color: #81B4E6;
+  background-color: #1976D2;
+}
+.color-9, .color-10 {
+  border-radius: 1em;
 }
 
 .flex {
