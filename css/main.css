@@ -37,13 +37,13 @@ body {
   font-size: 3rem;
 }
 .color-3 {
-  border: 3px solid #81B4E6;
-  background-color: #1976D2;
+  border: 3px solid #FFE28E;
+  background-color: #FFC107;
   color: #fff;
 }
 .color-3:hover {
-  border-color: #FFE28E;
-  background-color: #FFC107;
+  border: 3px solid #81B4E6;
+  background-color: #1976D2;
 }
 .color-4 {
   max-width: 240px;
@@ -58,11 +58,12 @@ body {
   color: #FFE28E;
 }
 .color-5 {
-  border: 3px solid #FFC107;
+  border: 3px solid #FFE28E;
   background-color: #FFC107;
 }
 .color-5:hover {
   background-color: #FFE28E;
+  border-color: #FFC107;
 }
 .color-6 {
   border: 3px solid #FFE28E;
