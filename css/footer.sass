@@ -1,3 +1,61 @@
+.color
+  &-test
+    display: flex
+    flex-direction: column
+    height: 400px
+    width: 100%
+    justify-content: center
+  &-btn
+    max-width: 240px
+    height: 60px
+    padding: 1rem 2rem
+    margin: 1rem 2rem
+    color: #fff
+  &-1
+    color: #81B4E6
+    background-color: $color-primary
+    margin: 2rem
+    font-size: 4rem
+  &-2
+    color: #FFE28E
+    background-color: $color-secondary
+    margin: 2rem
+    font-size: 3rem
+  &-3
+    border: 3px solid #81B4E6
+    background-color: $color-primary
+    color: #fff
+    &:hover
+      border-color: #FFE28E
+      background-color: $color-secondary
+  &-4
+    max-width: 240px
+    height: 60px
+    border: 3px solid $color-primary
+    padding: 1rem 2rem
+    background-color: #81B4E6
+    margin: 1rem auto
+    color: #fff
+    &:hover
+      color: #FFE28E
+  &-5
+    border: 3px solid $color-secondary
+    background-color: #FFE28E
+    &:hover
+      background-color: #81B4E6
+  &-6
+    border: 3px solid #FFE28E
+    background-color: $color-secondary
+    &:hover
+      border-color: $color-primary
+
+.flex
+  &-container
+    display: flex
+    justify-content: center
+  display: flex
+  flex-direction: column
+
 @media all and (min-width: 1366px)
   .footer
     display: flex
