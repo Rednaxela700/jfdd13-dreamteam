@@ -1,6 +1,7 @@
-@import "nav.css";
+@import url(/home/michalq/Desktop/Frond-end_infoShare/dreamTeam/projekt/css/nav.css);
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -10,6 +11,7 @@ body {
   font-size: 16px;
 }
 
+
 .color-test {
   display: flex;
   flex-direction: column;
@@ -17,6 +19,7 @@ body {
   width: 100%;
   justify-content: center;
 }
+
 .color-btn {
   max-width: 240px;
   height: 60px;
@@ -24,27 +27,32 @@ body {
   margin: 1rem 2rem;
   color: #fff;
 }
+
 .color-1 {
   color: #81B4E6;
   background-color: #1976D2;
   margin: 2rem;
   font-size: 4rem;
 }
+
 .color-2 {
   color: #FFE28E;
   background-color: #FFC107;
   margin: 2rem;
   font-size: 3rem;
 }
+
 .color-3 {
   border: 3px solid #FFE28E;
   background-color: #FFC107;
   color: #fff;
 }
+
 .color-3:hover {
   border: 3px solid #81B4E6;
   background-color: #1976D2;
 }
+
 .color-4 {
   max-width: 240px;
   height: 60px;
@@ -54,63 +62,124 @@ body {
   margin: 1rem auto;
   color: #fff;
 }
+
 .color-4:hover {
   color: #FFE28E;
 }
+
 .color-5 {
   border: 3px solid #FFE28E;
   background-color: #FFC107;
 }
+
 .color-5:hover {
   background-color: #FFE28E;
   border-color: #FFC107;
 }
+
 .color-6 {
   border: 3px solid #FFE28E;
   background-color: #1976D2;
 }
+
 .color-6:hover {
   border-color: #1976D2;
 }
+
 .color-7, .color-9 {
   border: 3px solid #81B4E6;
   background-color: #1976D2;
 }
+
 .color-7:hover, .color-9:hover {
   border-color: #1976D2;
   background-color: #81B4E6;
 }
+
 .color-8, .color-10 {
   background-color: #81B4E6;
   border: 3px solid #1976D2;
 }
+
 .color-8:hover, .color-10:hover {
   border-color: #81B4E6;
   background-color: #1976D2;
 }
+
 .color-9, .color-10 {
   border-radius: 1em;
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background: #1976D2;
+  color: #FFC107;
+  min-width: 480px;
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+  }
+
+.form__head {
+  font-size: 32px;
+  font-weight: 900px;
+  padding: 25px 100px;
+  }
+
+.form__input {
+  background: #FFE28E;
+  padding: 10px 30px 5px 5px;
+  color: #1976D2;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
-.flex-container {
+
+.form__check {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  font-size: 12px;
+  margin: 10px;
+}
+.form__btn{
+  border-radius: 25px;
+  text-transform: uppercase;
 }
 
 @media all and (min-width: 1366px) {
   .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background-color: #1976D2;
   }
-
   .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 50%;
     min-width: 126px;
@@ -126,30 +195,40 @@ body {
     border-radius: 5rem;
   }
   .card__info-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width: 100%;
   }
   .card__info-item {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .card__info-name {
     font-size: 1.5rem;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     padding: 1rem 1rem 0 0;
     border-bottom: 3px solid #FFC107;
     text-align: right;
   }
   .card__info-links {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     padding-right: 1rem;
   }
   .card__link-icon > i {
     font-size: 1.5rem;
   }
   .card__link-item {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     text-decoration: none;
     color: #000;
     cursor: pointer;
@@ -159,5 +238,4 @@ body {
     color: #000;
   }
 }
-
 /*# sourceMappingURL=main.css.map */
