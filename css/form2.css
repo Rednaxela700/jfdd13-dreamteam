@@ -35,6 +35,9 @@
     margin-left: 10rem;
     margin-bottom: 2rem;
 }
+.btn{
+    text-transform: capitalize;
+}
 .form__input{
     background: #8BC34A;
     color: #757575;
