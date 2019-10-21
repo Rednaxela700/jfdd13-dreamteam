@@ -5,9 +5,9 @@ const
     
 function addMail(){
     localStorage.setItem("email", inputMail.value);
+    checkboxObject.required = true; 
     thankYou.innerText = 'Dziękujemy! Zapewniamy o bezpieczeństwie Państwa danych.';
     event.preventDefault();
 }
 
 submitMail.addEventListener("click", addMail);
-
