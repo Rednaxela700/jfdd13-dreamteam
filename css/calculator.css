@@ -51,8 +51,14 @@
 
 .price {
 
-    font-weight: bold;
     color: red;
+}
+
+.price_comment{
+
+padding-top: 10px;
+font-weight: bold;
+
 }
 
 /* suwak */
@@ -66,10 +72,19 @@
 .calculator {
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 70px;
     max-width: 50%;
+
+}
+
+.range_div{
+
+height: 30px;
+display: flex;
+align-items: center;
+position: relative;
 
 }
 
@@ -80,9 +95,8 @@
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
     border-radius: 4px;
+    position: absolute;
 }
 
 .slider:hover {
@@ -112,7 +126,7 @@
 }
 
 #button_calculator {
-    margin-top: 40px;
+    margin: 20px 0;
     padding: 10px;
     border-radius: 6px;
     background-color: #1976D2;
