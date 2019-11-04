@@ -9,7 +9,6 @@
 .calculator_board {
 
     
-    max-width: 50%;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -26,7 +25,7 @@
 .holidays_img img {
     display: block;
     height: auto;
-    max-width: 60%;
+    width: 400px;
 }
 
 .calculator_board_title {
@@ -74,8 +73,6 @@ font-weight: bold;
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 70px;
-    max-width: 50%;
 
 }
 
@@ -131,5 +128,28 @@ position: relative;
     border-radius: 6px;
     background-color: #1976D2;
     color: white;
+
+}
+
+@media all and (max-width: 870px){
+
+.calculator_divs{
+
+flex-flow: column;
+align-items: center;
+
+}
+
+.calculator{
+
+margin: 40px 10px 0;
+}
+
+
+.holidays_img img {
+    display: block;
+    height: auto;
+    width: 320px;
+}
 
 }
