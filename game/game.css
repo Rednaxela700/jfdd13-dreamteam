@@ -50,6 +50,9 @@
     color: crimson;
     z-index: 1;
 }
+#player__img{
+    width: 25%;
+}
 #start__btn{
     position: absolute;
     z-index: 1;
@@ -123,12 +126,6 @@
     z-index: 0;
 }
 
-img{
-    width: 6%;
-    position: absolute;
-    top: 120px;
-    left: 640px;
-}
 .bird{
     position: absolute;
     font-size: 50px;
