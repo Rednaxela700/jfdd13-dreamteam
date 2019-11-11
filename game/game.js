@@ -37,7 +37,8 @@ startGame = () => {
   instBtn.style.display = 'none';
   event.preventDefault();
   document.addEventListener("keydown", event => Render.KeySupport(Player, event));
-  
+  Render.checkCollision();
+
   firstLoop = () => {
     Render.create(createPlayer('pilot'));    
     Render.create(createBird('ufo'));
@@ -53,6 +54,7 @@ startGame = () => {
     Render.create(createBirdZ('zet'));
   };
   mainLoop = () => {
+    // checkCollision()
     setInterval(obstacleLoop,12000);
     setInterval(birdLoop,6000);
     setInterval(birdZLoop,9000);  
@@ -86,12 +88,14 @@ class Render {
       child.style.height = obstHeight + 'px';
       child.style.background = `grey`;
       child.setAttribute('class', `obstacle ${el.name}`);
+      childrenArray.push(el);
      
     } else if (el.type === 'bird' || el.type === 'birdZ') {
       child.style.width = birdWidth + 'px';
       child.style.height = birdHeight +'px';
       child.style.background = `red`;
       child.setAttribute('class', `bird ${el.name}`);
+      childrenArray.push(el);
     }
     // console.log(`this ${el.type} el id is ${el.id}`);
 
@@ -101,7 +105,7 @@ class Render {
     el.domEl = document.getElementById(`${el.name}${el.id}`);
 
     console.log('create', el.name);
-    childrenArray.push(el);
+    
 
     // console.log(`this el position y is ${el.position.y}`);
   };
@@ -137,42 +141,43 @@ class Render {
 
     });         
   };
-  static KeySupport(domEl, event) {
-    childrenArray.forEach((el,i) =>{
-  
-      if(el.type==='player'){
-      switch (event.code) {
-        case "ArrowLeft":
-          if(el.position.x > boardStart) {
-            el.playerLeft()
-          };
-
-          // Player.changePosition();
-          break;
-        case "ArrowRight":
-          if(el.position.x + playerWidth < boardWidth) {
-            el.playerRight()
-          };
-  
-          break;
-        case "ArrowUp":
-          if(el.position.y > frameUp) {
-            el.playerUp()
-          };
-  
-          break;
-        case "ArrowDown":
-          if(el.position.y + playerHeight < boardHeight) {
-            el.playerDown()
-          };
-  
-          break;
-        default:
-          return
+  static checkCollision(domEl){
+ 
+    // childrenArray.forEach((el,i) =>{
+    //   if(el.type==='obstacle' || el.type==='bird') {
+    //     const checkObstX = el.position.x;
+    //     const checkObstY = el.position.y;
+    //   }
+    // })
+  }
+  static KeySupport(Player, event) {
+    if(el.type==='player'){
+    switch (event.code) {
+      case "ArrowLeft":
+        if(el.position.x > boardStart) {
+          el.playerLeft()
         };
+        break;
+      case "ArrowRight":
+        if(el.position.x + playerWidth < boardWidth) {
+          el.playerRight()
+        };
+        break;
+      case "ArrowUp":
+        if(el.position.y > frameUp) {
+          el.playerUp()
+        };
+        break;
+      case "ArrowDown":
+        if(el.position.y + playerHeight < boardHeight) {
+          el.playerDown()
+        };
+        break;
+      default:
+        return
       };
-    });
-  };
+    };
+  } 
 
   static destroy(el) {
 
