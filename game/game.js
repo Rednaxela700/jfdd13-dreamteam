@@ -80,8 +80,10 @@ class Render {
     if (el.type === 'player') {
       child.style.width = playerWidth + 'px';
       child.style.height = playerHeight + 'px';
-      child.style.background = `blue`;
+      // child.style.background = `blue`;
       child.setAttribute('class', `player`);
+      child.style.backgroundImage = "url('img/airplane_icon.png')";
+      child.style.backgroundRepeat = 'round';
      
     } else if (el.type === 'obstacle') {
       child.style.width = obstWidth + 'px';
