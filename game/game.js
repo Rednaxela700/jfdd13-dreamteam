@@ -34,7 +34,19 @@ const
     };
 
     checkCollision = (domEl) => {
+        childrenArray.forEach((el) => {
+            if (el.type!=='obstacle'){
+                const playX = el.position.x, playY = el.position.y;
+                // console.log(`player is on:` + playX, playY)
+            } else if (el.type ==='obstacle'){
+                const obstX = el.position.x, obstY = el.position.y;
+                console.log(`${el.name} is on:` + obstX, obstY)
+  
+            } 
+            else {throw Error('unresolved problem in checkCollision')
+            };
 
+        })
     }
     gameOver = (domEl) => {
         console.log('mamy kolizję')
