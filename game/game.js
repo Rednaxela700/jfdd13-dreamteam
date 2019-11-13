@@ -22,7 +22,7 @@ const
     startLine = 150,
     creationLine = 700,
     speed = 1,
-    speedObst = 10,
+    speedObst = 4,
     speedBird = 10,
     speedBirdZ = 4,
     childrenArray = [],
@@ -33,11 +33,9 @@ const
         document.location.assign('../index.html');
     };
 
-    checkCollision = () => {
-     
+    checkCollision = (domEl) => {
 
     }
-
     gameOver = (domEl) => {
         console.log('mamy kolizję')
     }
@@ -61,7 +59,7 @@ const
             Render.create(createPlayer());
             Render.create(createBird());
             Render.create(createObstacle());
-            checkCollision();
+            // checkCollision();
            
         };
         obstacleLoop = () => {
@@ -292,17 +290,6 @@ class Obstacle extends BoardElement {
     }
 }
 
-// class Bird extends BoardElement {
-//     constructor(name, domEl, id, position = {x: '', y: ''}, speed, type) {
-//         super(domEl, id, position);
-//         this.name = name;
-//         this.position.x = position.x;
-//         this.position.y = position.y;
-//         this.speed = speed;
-//         this.type = type;
-//     }
-// }
-
 // const play = new Player( 'Andrzej', '', 0, 'speed', 'player')
 createPlayer = () => {
     return new Player('player', '', id, {x: startLine, y: startLine}, speed, 'player');
@@ -311,10 +298,10 @@ createObstacle = () => {
     return new Obstacle('obstacle', '', '', {x: creationLine, y: (boardHeight - obstHeight)}, speedObst, 'obstacle');
 };
 createBird = () => {
-    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'obstacle');
+    return new Obstacle('bird', '', '', {x: creationLine, y: generateBirdY()}, speedBird, 'obstacle');
 };
 createBirdZ = () => {
-    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()}, speedObst, 'obstacle');
+    return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()}, speedBirdZ, 'obstacle');
 };
 
 // generatePositionX = element => {
