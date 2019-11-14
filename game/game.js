@@ -12,7 +12,7 @@ const
 const
     playerWidth = 40,
     playerHeight = 40,
-    obstWidth = 100,
+    obstWidth = 200,
     obstHeight = 200,
     birdWidth = 40,
     birdHeight = 40,
@@ -33,22 +33,26 @@ const
     };
 
     checkCollision = (domEl) => {
+        const playX = playerArray[0].position.x;
+        const playY = playerArray[0].position.y;
+        
         const collisionArray = childrenArray.filter(el => 
-            el.position.x === playerArray[0].position.x 
-            && 
-            el.position.y === playerArray[0].position.y);
-        // console.log(collisionArray)
+            playX + playerWidth > el.position.x &&
+            playY + playerHeight > el.position.y || 
+            playY + playerHeight < el.position.y + obstHeight);
 
-}
-
- 
+            console.log(playX, playY)
+        // const testX = document.getElementById    console.log()
+        let test = document.getElementById('obstacle3');
+        console.log(test.style.left, test.style.top)
+        }
   
 //   checkObj = () => {
-//     collisionArray[0](item => !isNaN (item) ? console.log('tak') : console.log('nothing'))
+//     collisionArray[0].forEach(item => !isNaN (item) ? console.log('tak') : console.log('nothing'))
 //   }
        
 //   checkObj()
-
+    
 
     
     gameOver = (domEl) => {
@@ -75,7 +79,7 @@ const
             Render.create(createBird());
             Render.create(createObstacle());
             // checkCollision();
-           
+            Render.create(createTest());           
         };
         obstacleLoop = () => {
             Render.create(createObstacle());
@@ -89,7 +93,7 @@ const
         mainLoop = () => {
             setInterval(checkPosition, 100);
             setInterval(checkCollision, 100);
-            setInterval(obstacleLoop, 5000);
+            setInterval(obstacleLoop, 9000);
             setInterval(birdLoop, 2000);
             setInterval(birdZLoop, 9000);
             //further 4 lines just for testing purposes
@@ -123,7 +127,7 @@ class Render {
         if (el.name === 'player') {
             child.style.width = playerWidth + 'px';
             child.style.height = playerHeight + 'px';
-            // child.style.backgroundColor = `blue`;
+            child.style.backgroundColor = `blue`;
             child.style.backgroundImage = "url('img/ptasiek.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `player`);
@@ -133,7 +137,7 @@ class Render {
             child.style.height = obstHeight + 'px';
             // child.style.bottom = `0px`;
             // child.style.backgroundColor = `grey`;
-            child.style.backgroundImage = "url('img/tree1.png')";
+            child.style.backgroundImage = "url('img/tree3.png')";
             child.style.backgroundRepeat = 'round';
             child.setAttribute('class', `obstacle ${el.name}`);
 
@@ -325,6 +329,10 @@ createBird = () => {
 createBirdZ = () => {
     return new Obstacle('birdz', '', '', {x: creationLine, y: generateBirdY()}, speedBirdZ, 'obstacle');
 };
+createTest = () => {
+    return new Obstacle('obstacle', '', '', {x: 200, y: 200}, 0, 'test');
+};
+
 
 // generatePositionX = element => {
 //   const bW = board.domEl.offsetWidth;
