@@ -37,7 +37,7 @@ const
             el.position.x === playerArray[0].position.x 
             && 
             el.position.y === playerArray[0].position.y);
-        console.log(collisionArray)
+        // console.log(collisionArray)
 
 }
 
@@ -175,16 +175,19 @@ class Render {
     };
 
     static changePosition(domEl) {
+        
+        let player = document.getElementById('player0');
+        let playX = playerArray[0].position.x;
+        let playY = playerArray[0].position.y;
+
+        player.style.left = playX + 'px';
+        player.style.top = playY + 'px';
+            
         childrenArray.forEach((el, i) => {
             let x = el.position.x;
             let y = el.position.y;
-            // console.log(`child x= ${x}`);
-
-            if (el.name === 'player') {
-                el.domEl.style.left = x + 'px';
-                el.domEl.style.top = y + 'px';
-            
-            }else if (el.name === 'obstacle') {
+        
+            if (el.name === 'obstacle') {
                 el.moveObst();
                 el.domEl.style.left = x + 'px';
             
@@ -197,39 +200,38 @@ class Render {
                 el.domEl.style.left = x + 'px';
                 el.domEl.style.top = y + 'px';
             }
-        });
-    };
+        }); 
+    }
+    static KeySupport(Player, event) {
+        playerArray.forEach((Player) => {
+            const playX = playerArray[0].position.x;
+            const playY = playerArray[0].position.y;
+            // console.log(playX,playY);
 
-    static KeySupport(domEl, event) {
-        childrenArray.forEach((el, i) => {
-
-            if (el.type === 'player') {
-                switch (event.code) {
-                    case "ArrowLeft":
-                        if (el.position.x > boardStart) {
-                            el.playerLeft()
-                        }
-                        // Player.changePosition();
-                        break;
-                    case "ArrowRight":
-                        if (el.position.x + playerWidth < boardWidth) {
-                            el.playerRight()
-                        }
-                        break;
-                    case "ArrowUp":
-                        if (el.position.y > boardStart) {
-                            el.playerUp()
-                        }
-                        break;
-                    case "ArrowDown":
-                        if (el.position.y + playerHeight < boardHeight) {
-                            el.playerDown()
-                        }
-                        break;
-                    default:
-                        return
-                }
-            }
+        switch (event.code) {
+            case "ArrowLeft":
+                if (playX > boardStart) {
+                    Player.playerLeft();
+                };
+                break;
+            case "ArrowRight":
+                if (playX + playerWidth < boardWidth) {
+                    Player.playerRight();
+                };
+                break;
+            case "ArrowUp":
+                if (playY > boardStart) {
+                    Player.playerUp();
+                };
+                break;
+            case "ArrowDown":
+                if (playY + playerHeight < boardHeight) {
+                    Player.playerDown();
+                };
+                break;
+            default:
+                return;
+            };
         });
     };
 
