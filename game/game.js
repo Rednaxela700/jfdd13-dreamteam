@@ -26,6 +26,7 @@ const
     speedBird = 10,
     speedBirdZ = 4,
     childrenArray = [],
+    playerArray =[],
 
     backToMenu = () => {
         document.location.assign('../index.html');
@@ -33,11 +34,22 @@ const
 
     checkCollision = (domEl) => {
         const collisionArray = childrenArray.filter(el => 
-            el.position.x === childrenArray[0].position.x 
+            el.position.x === playerArray[0].position.x 
             && 
-            el.position.y === childrenArray[0].position.y);
-    console.log(collisionArray)
-    }      
+            el.position.y === playerArray[0].position.y);
+        console.log(collisionArray)
+
+}
+
+ 
+  
+//   checkObj = () => {
+//     collisionArray[0](item => !isNaN (item) ? console.log('tak') : console.log('nothing'))
+//   }
+       
+//   checkObj()
+
+
     
     gameOver = (domEl) => {
         console.log('mamy kolizję')
@@ -148,8 +160,13 @@ class Render {
         parentVar.appendChild(child);
         // console.log('create', el.name);
         el.domEl = document.getElementById(`${el.name}${el.id}`);
-        childrenArray.push(el);
-        // console.log(`this el position y is ${el.position.y}`);
+        
+        if (el.name === 'player'){
+            playerArray.push(el)
+        } else if (el.name !== 'player'){
+            childrenArray.push(el);
+        }   
+            // console.log(`this el position y is ${el.position.y}`);
     };
 
     static styleEl(el, arg, output) {
